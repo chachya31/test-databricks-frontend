@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { ThemeProvider, createTheme, CssBaseline } from '@mui/material';
 import { ErrorBoundary } from '@/components/common/ErrorBoundary';
 import { NotificationProvider } from '@/components/common/Notification';
+import { Chatbot } from '@/components/common/Chatbot';
 import { AuthGuard } from '@/components/auth/AuthGuard';
 import { Layout } from '@/components/common/Layout';
 import { LoginForm } from '@/components/auth/LoginForm';
@@ -53,6 +54,8 @@ function App() {
                           <Route path="*" element={<Navigate to="/" replace />} />
                         </Routes>
                       </React.Suspense>
+                      {/* Chatbot - 全ページで利用可能 */}
+                      <Chatbot />
                     </Layout>
                   </AuthGuard>
                 }
